@@ -7,7 +7,28 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "react_native_jobs",
-    "slug": "react_native_jobs"
+    "name": "Job Finder",
+    "slug": "Job-finder",
+    "icon": "./assets/favicon.png",
+    "description": "Your Path to Dream Jobs, Simplified.",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.toxino.Jobfinder"
+    },
+    "ios": {
+      "bundleIdentifier": "com.toxino.Jobfinder"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4a83784e-32f1-4a73-88f5-e1c7fc86015f"
+      }
+    }
   }
 }
