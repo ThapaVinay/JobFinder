@@ -1,0 +1,2 @@
+// Home page -> hamburger menu, Show All and profile menu.
+// Job details -> like button

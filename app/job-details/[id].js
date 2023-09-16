@@ -18,7 +18,11 @@ const JobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const onRefresh = () => { }
+    const onRefresh = useCallback(() => {
+        setRefreshing(true);
+        refetch();
+        setRefreshing(false);
+    },[])
 
     const displayTabContent = () => {
         switch (activeTab) {
@@ -31,7 +35,7 @@ const JobDetails = () => {
 
             case "About":
                 return <JobAbout
-                    info={data[0].job_description?.info ?? "No data"}
+                    info={data[0].job_description ?? "No data"}
                 />
 
             case "Responsibilities":
@@ -46,7 +50,7 @@ const JobDetails = () => {
         }
     }
 
-    const { data, isLoading, error } = useFetch('job-details', {
+    const { data, isLoading, error, refetch } = useFetch('job-details', {
         job_id: params.id,
     })
 
@@ -106,6 +110,9 @@ const JobDetails = () => {
                         </View>
                     )}
                 </ScrollView>
+
+                <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results'} />
+
             </>
 
         </SafeAreaView>
