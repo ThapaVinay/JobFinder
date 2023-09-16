@@ -29,14 +29,9 @@ const Home = () => {
                 <View
                     style={{ flex: 1, padding: SIZES.medium }}
                 >
-                    <Welcome
-                    />
-
-                    <Popularjobs
-                    />
-
-                    <Nearbyjobs
-                    />
+                    <Welcome />
+                    <Popularjobs />
+                    <Nearbyjobs />
                 </View>
             </ScrollView>
 
